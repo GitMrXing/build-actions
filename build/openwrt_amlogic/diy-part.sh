@@ -27,13 +27,6 @@ sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt 
 
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ                                                            # 设置密码为空
 
-cat >${GITHUB_WORKSPACE}/amlogic_openwrt <<-EOF
-amlogic_model=s905d
-amlogic_kernel=5.10.100_5.4.180 -a true
-rootfs_size=1200
-EOF
-
-
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间
 cat >${GITHUB_WORKSPACE}/Clear <<-EOF
 rm -rf config.buildinfo
